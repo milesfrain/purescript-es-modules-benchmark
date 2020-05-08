@@ -3,8 +3,7 @@ const { terser } = require ('rollup-plugin-terser')
 
 module.exports = [
   { entry: "rollup", output: "output" },
-  { entry: "rollup-dce", output: "dce-output" },
-  { entry: "rollup-esm", output: "esm-output" }
+  { entry: "rollup-dce", output: "dce-output" }
 ].reduce((configs, { entry, output }) => {
   for (const minimize of [false, true]) {
     configs.push({
