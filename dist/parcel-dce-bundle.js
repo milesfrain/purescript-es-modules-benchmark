@@ -1,7 +1,5 @@
 (function () {
-// ASSET: index.js
-var $Focm$exports = {};
-
+// ASSET: ../Effect.Console/foreign.js
 var $CEFT$export$log = function (s) {
   return function () {
     console.log(s);
@@ -9,8 +7,17 @@ var $CEFT$export$log = function (s) {
   };
 };
 
-var $Focm$export$main = $CEFT$export$log("Hello world");
-$Focm$exports.main = $Focm$export$main;
+// ASSET: ../Effect.Console/index.js
+var $bfEs$exports = {};
+$bfEs$exports = {
+  log: $CEFT$export$log
+};
+// ASSET: index.js
+var $Focm$exports = {};
+var $Focm$var$main = $bfEs$exports.log("Hello world");
+$Focm$exports = {
+  main: $Focm$var$main
+};
 
 if (typeof exports === "object" && typeof module !== "undefined") {
   // CommonJS
