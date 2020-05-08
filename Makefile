@@ -5,20 +5,16 @@ PATH := $(shell npm bin):$(PATH)
 node_modules:
 	npm install
 
-.PHONY: stack-local-bins
-stack-local-bins:
-	stack build
-
 .PHONY: install
-install: node_modules stack-local-bins
+install: node_modules
 
 .PHONY: output
 output: node_modules
 	psc-package build -- --codegen js,corefn
 
 .PHONY: dce-output
-dce-output: stack-local-bins output
-	stack exec zephyr -- Main --dce-foreign
+dce-output: output
+	zephyr Main --dce-foreign
 
 .PHONY: purs-bundles
 purs-bundles: output
