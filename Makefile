@@ -60,4 +60,4 @@ clean:
 
 .PHONY: bundles
 bundles: clean purs-bundles webpack4-bundles webpack5-bundles rollup-bundles parcel-bundles
-	ls -lS dist
+	ls -lS dist | awk '{print $$5, $$9}' | column -t
