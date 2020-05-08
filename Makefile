@@ -1,3 +1,5 @@
+SHELL=/bin/bash
+
 PATH := $(shell npm bin):$(PATH)
 .DEFAULT_GOAL := bundles
 
